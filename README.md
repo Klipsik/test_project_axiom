@@ -37,10 +37,11 @@ A web application for product search and filtering built with Laravel 12 and Vue
 
 ## Installation
 
-1. **Clone the repository or extract the project:**
+1. **Clone the repository:**
 
    ```bash
-   cd /var/www/test_project
+   git clone https://github.com/Klipsik/test_project_axiom.git
+   cd test_project_axiom
    ```
 
 2. **Install PHP dependencies:**
@@ -271,7 +272,28 @@ php artisan test
 ```
 
 Test coverage includes:
-- Unit tests for models
+- Unit tests for models, repositories, services, DTOs, and observers
 - Feature tests for API endpoints
 - Filter and sorting tests
 - Pagination tests
+- Cache invalidation tests
+
+**Test Results:** 55 tests passed (287 assertions)
+
+## Code Quality
+
+The project follows best practices:
+- **SOLID principles** - Dependency Inversion, Single Responsibility, etc.
+- **DRY principle** - No code duplication
+- **Laravel Way** - Uses Laravel helpers and conventions
+- **Repository Pattern** - Data access abstraction
+- **Service Layer** - Business logic separation
+- **Dependency Injection** - Uses contracts/interfaces instead of concrete classes
+- **Comprehensive Testing** - High test coverage with unit and feature tests
+
+## CI/CD
+
+GitHub Actions workflow configured for:
+- Automated testing on push/PR
+- Code coverage reporting (minimum 60%)
+- PHP 8.3 compatibility check
