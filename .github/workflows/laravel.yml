@@ -25,7 +25,9 @@ jobs:
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
     
     - name: Install Dependencies
-      run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+      run: |
+        composer validate --no-check-publish
+        composer install --no-interaction --prefer-dist --no-scripts --no-progress
     
     - name: Generate key
       run: php artisan key:generate
@@ -53,7 +55,7 @@ jobs:
     
     - name: Upload coverage reports
       uses: codecov/codecov-action@v4
-      if: always()
+      if: success() && always()
       with:
         file: ./coverage.xml
         flags: unittests
