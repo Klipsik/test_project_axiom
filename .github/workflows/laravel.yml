@@ -27,7 +27,7 @@ jobs:
     - name: Install Dependencies
       run: |
         composer validate --no-check-publish
-        composer install --no-interaction --prefer-dist --no-scripts --no-progress
+        composer update --no-interaction --prefer-dist --no-scripts --no-progress
     
     - name: Generate key
       run: php artisan key:generate
